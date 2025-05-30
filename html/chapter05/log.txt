@@ -1,0 +1,68 @@
+---------
+chapter 5002: start = 2025.05.30 15:50:51
+chapter 5002: 2025.05.30 15:50:51 Error 0 on line 32
+---------
+chapter 5003: start = 2025.05.30 15:50:51
+chapter 5003: 2025.05.30 15:50:51 Error 0 on line 32
+---------
+chapter 5004: start = 2025.05.30 15:50:51
+chapter 5004: 2025.05.30 15:50:52 Error 0 on line 32
+---------
+chapter 5005: start = 2025.05.30 15:50:52
+chapter 5005: 2025.05.30 15:50:52 Error 0 on line 32
+---------
+chapter 5006: start = 2025.05.30 15:50:52
+chapter 5006: 2025.05.30 15:50:52 Error 0 on line 32
+---------
+chapter 5002: start = 2025.05.30 15:53:30
+chapter 5002: 2025.05.30 15:53:30 Error 0 on line 32
+---------
+chapter 5003: start = 2025.05.30 15:53:30
+chapter 5003: 2025.05.30 15:53:30 Error 0 on line 32
+---------
+chapter 5004: start = 2025.05.30 15:53:30
+chapter 5004: 2025.05.30 15:53:30 Error 0 on line 32
+---------
+chapter 5005: start = 2025.05.30 15:53:30
+chapter 5005: 2025.05.30 15:53:30 Error 0 on line 32
+---------
+chapter 5006: start = 2025.05.30 15:53:30
+chapter 5006: 2025.05.30 15:53:30 Error 0 on line 32
+---------
+chapter 5002: start = 2025.05.30 15:56:05
+chapter 5002: stop = 2025.05.30 16:01:39
+---------
+---------
+chapter 5003: start = 2025.05.30 16:01:39
+chapter 5003: stop = 2025.05.30 17:11:20
+---------
+---------
+chapter 5004: start = 2025.05.30 17:11:20
+chapter 5004: stop = 2025.05.30 17:12:44
+---------
+---------
+chapter 5005: start = 2025.05.30 17:12:44
+chapter 5005: 2025.05.30 17:12:48 Error 0 on line 62
+---------
+chapter 5006: start = 2025.05.30 17:12:48
+chapter 5006: 2025.05.30 17:13:41 Error 0 on line 72
+---------
+chapter 5004: start = 2025.05.30 17:19:23
+chapter 5004: stop = 2025.05.30 17:20:39
+---------
+---------
+chapter 5005: start = 2025.05.30 17:21:18
+chapter 5005: 2025.05.30 17:21:26 Error 0 on line 113
+---------
+chapter 5005: start = 2025.05.30 17:22:17
+chapter 5005: 2025.05.30 17:22:21 Error 0 on line 92
+---------
+chapter 5005: start = 2025.05.30 17:22:58
+chapter 5005: stop = 2025.05.30 17:37:50
+---------
+---------
+chapter 5006: start = 2025.05.30 17:38:50
+chapter 5006: 2025.05.30 17:39:22 Error 0 on line 62
+---------
+chapter 5006: start = 2025.05.30 17:40:47
+chapter 5006: 2025.05.30 17:44:42 Error 0 on line 139
