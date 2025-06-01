@@ -1,0 +1,121 @@
+#!/usr/bin/bash
+
+# ===== 8.46. Autoconf-2.72 =====
+topdir=$(pwd)
+err=0
+set -e
+chapter=8046
+err_report() {
+    echo "chapter $chapter: $(date +'%Y.%m.%d %H:%M:%S') Error $? on line $1" | tee >> $topdir/log.txt
+}
+trap 'err_report $LINENO' ERR
+echo "---------" >> $topdir/log.txt
+echo chapter $chapter: start = $(date +'%Y.%m.%d %H:%M:%S') >> $topdir/log.txt
+
+
+
+
+if [ "$EUID" -ne "0" ]; then
+  echo "ERROR: Please run as root, not as user id = $EUID";stop
+  exit 1
+fi
+
+grep -q $LFS/dev/pts /proc/mounts || err=1
+if [ "$err" -eq "1" ]; then
+  echo "ERROR: The '$LFS/dev/pts' partition must be mounted.";stop
+  exit 1
+fi
+
+grep -q $LFS/dev /proc/mounts || err=1
+if [ "$err" -eq "1" ]; then
+  echo "ERROR: The '$LFS/dev' partition must be mounted.";stop
+  exit 1
+fi
+
+grep -q $LFS/proc /proc/mounts || err=1
+if [ "$err" -eq "1" ]; then
+  echo "ERROR: The '$LFS/proc' partition must be mounted.";stop
+  exit 1
+fi
+
+grep -q $LFS/sys /proc/mounts || err=1
+if [ "$err" -eq "1" ]; then
+  echo "ERROR: The '$LFS/sys' partition must be mounted.";stop
+  exit 1
+fi
+
+grep -q $LFS/run /proc/mounts || err=1
+if [ "$err" -eq "1" ]; then
+  echo "ERROR: The '$LFS/run' partition must be mounted.";stop
+  exit 1
+fi
+
+
+
+srcdir=../../src/autoconf-2.72
+tar xf ../../src/autoconf-2.72.tar.xz -C ../../src
+# Check, if we could extract the tarball and stop on error:
+[ ! -d "$srcdir" ] && stop
+cd $srcdir
+
+#<p>
+#
+#  The Autoconf package contains programs for producing shell scripts that can 
+# automatically configure source code. 
+#</p>
+
+#  Approximate build time: less than 0.1 SBU (about 0.4 SBU with tests)
+#  Required disk space: 25 MB
+# ==== 8.46.1. Installation of Autoconf ====
+#<p>
+#
+#  Prepare Autoconf for compilation: 
+#</p>
+
+#********<pre>***********
+./configure --prefix=/usr
+#********</pre>**********
+#<p>
+#
+#  Compile the package: 
+#</p>
+
+#********<pre>***********
+make
+#********</pre>**********
+#<p>
+#
+#  To test the results, issue: 
+#</p>
+
+#********<pre>***********
+#make check
+#********</pre>**********
+#<p>
+#
+#  Install the package: 
+#</p>
+
+#********<pre>***********
+make install
+#********</pre>**********
+
+# ==== 8.46.2. Contents of Autoconf ====
+
+#  Installed programs: autoconf, autoheader, autom4te, autoreconf, autoscan, autoupdate, and ifnames
+#  Installed directory: /usr/share/autoconf
+# ====== Short Descriptions ======
+
+#--------------------------------------------
+# | autoconf                                 | Produces shell scripts that automatically configure software source code packages to adapt to many kinds of Unix-like systems; the configuration scripts it produces are independent—running them does not require theautoconf                                program                                 
+# | autoheader                               | A tool for creating template files of C #define                                 statements for configure to use         
+# | autom4te                                 | A wrapper for the M4 macro processor    
+# | autoreconf                               | Automatically runs                      autoconf                                ,                                       autoheader                              ,                                       aclocal                                 ,                                       automake                                ,                                       gettextize                              , and                                   libtoolize                              in the correct order to save time when changes are made toautoconf                                and                                     automake                                template files                          
+# | autoscan                                 | Helps to create a                       configure.in                            file for a software package; it examines the source files in a directory tree, searching them for common portability issues, and creates aconfigure.scan                          file that serves as a preliminary       configure.in                            file for the package                    
+# | autoupdate                               | Modifies a                              configure.in                            file that still calls                   autoconf                                macros by their old names to use the current macro names
+# | ifnames                                  | Helps when writing                      configure.in                            files for a software package; it prints the identifiers that the package uses in C preprocessor conditionals [If a package has already been set up to have some portability, this program can help determine whatconfigure                               needs to check for. It can also fill in gaps in aconfigure.in                            file generated by                       autoscan                                .]                                      
+#--------------------------------------------
+cd $topdir
+rm -rf $srcdir
+echo chapter $chapter: stop  = $(date +'%Y.%m.%d %H:%M:%S') >> $topdir/log.txt
+echo "---------" >> $topdir/log.txt
