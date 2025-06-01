@@ -13,3 +13,4 @@ Changes to LFS dev so far:
 - change the lib64 fix for gcc-14.2.0
 - compared the results to aarch64 instead of x86_64 for gcc and glibc tests, ie /lib64/ld-linux-x86-64.so.2 => /lib64/ld-linux-aarch64.so.1
 - set paper size to A4 for groff
+- 8.84 stripping is not done.
