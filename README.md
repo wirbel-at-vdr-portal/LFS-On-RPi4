@@ -15,4 +15,5 @@ Changes to LFS dev so far:
 - set paper size to A4 for groff
 - 8.84 stripping is not done.
 - chapter09 is done by hand
+- 10.2 /etc/fstab is taken from 
   
