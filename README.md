@@ -15,5 +15,42 @@ Changes to LFS dev so far:
 - set paper size to A4 for groff
 - 8.84 stripping is not done.
 - chapter09 is done by hand
-- 10.2 /etc/fstab is taken from 
+- 10.2 /etc/fstab is taken from raspbian
+
+## Getting the system bootable again
+```cd /mnt/sdcard/
+tar -xpf lfs-2025-r12.3-62-aarch64.tar.xz
+mkdir _backup
+
+
+
+I want to keep the original /boot and /dev folder, and not the lfs ones:
+mv boot _backup
+mv dev _backup
+mv _boot boot
+mv _dev dev
+
+mv _bin _backup
+mv _etc _backup
+mv _home _backup
+mv _var _backup
+mv _usr _backup
+mv _tmp _backup
+mv _sys _backup
+mv _srv _backup
+mv _sbin _backup
+mv _run _backup
+mv _root _backup
+mv _proc _backup
+mv _opt _backup
+mv _mnt _backup
+mv _media _backup
+mv _lost+found/ _backup/
+mv _lib _backup
+mv lfs-2025-r12.3-62-aarch64.tar.xz usr/src
+mv _backup usr/src
+
+cd /
+umount /mnt/sdcard
+```
   
