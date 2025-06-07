@@ -59,7 +59,7 @@ I added it in /etc/rc.d/rcS.d/S40mountfs, right after the mount -all call.
 
 ## Current status (20250607)
 - boots fast and successful
-- ssh work
+- ssh per key works
 - samba works
 - ethernet works
 - wifi works
