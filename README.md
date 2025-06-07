@@ -22,9 +22,7 @@ Changes to LFS dev so far:
 tar -xpf lfs-2025-r12.3-62-aarch64.tar.xz
 mkdir _backup
 
-
-
-I want to keep the original /boot and /dev folder, and not the lfs ones:
+# I want to keep the original /boot and /dev folder, and not the lfs ones:
 mv boot _backup
 mv dev _backup
 mv _boot boot
@@ -53,4 +51,16 @@ mv _backup usr/src
 cd /
 umount /mnt/sdcard
 ```
-  
+## Further changes
+- devpts needs to be mounted in the earliest boot scripts. Otherwise, no login is possible via shell or ssh, complaining about pts.
+I added it in /etc/rc.d/rcS.d/S40mountfs, right after the mount -all call.
+- /lib/firmware needs to be copied to the new system
+- check dmesg output, one link from /lib/firmware/btrc/bt** -> /lib/firmware/cypress/bt** -> /etc/alternatives/** -> /lib/firmware/cypress/bt** needs to be fixed
+
+## Current status (20250607)
+- boots fast and successful
+- ssh work
+- samba works
+- ethernet works
+- wifi works
+- compiler works
